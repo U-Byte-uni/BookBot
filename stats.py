@@ -2,9 +2,7 @@ def count_words(book_text):
     words = book_text.split()
     return len(words)
 
-# Numbers of time each character appears in the book including spaces and punctuation 
-# Use lower_case to avoid duplicates
-# output should be {'p': 6121, 'r': 20818, 'o': 25225, ...
+
 
 def count_characters(book_text):
     char_count = {}
@@ -14,3 +12,12 @@ def count_characters(book_text):
         else:
             char_count[char] = 1
     return char_count
+
+
+
+def sort_on(count_dict: tuple[str,int]) -> int:
+    return count_dict[1]
+
+def sort_count(count_dict):
+    sorted_count = sorted(count_dict.items(),key=sort_on,reverse=True)
+    return sorted_count
